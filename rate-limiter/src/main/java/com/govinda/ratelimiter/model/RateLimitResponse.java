@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RateLimitResponse {
-
     private boolean allowed;
     private int remainingTokens;
     private long retryAfterSeconds;

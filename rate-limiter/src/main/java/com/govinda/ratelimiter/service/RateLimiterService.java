@@ -58,8 +58,6 @@ public class RateLimiterService {
             // Bucket is empty — reject request
             return false;
         }
-
-        // Consume 1 token — decrement atomically
         redisTemplate.opsForValue().decrement(key);
         return true;
     }
