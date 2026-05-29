@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "Rate Limiter API",
+    "description": "Token-bucket rate limiter microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Send Rate-Limited Request",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "X-Client-Id", "value": "client_123" }],
+        "url": { "raw": "http://localhost:8080/api/request", "host": ["localhost"], "port": "8080", "path": ["api","request"] }
+      }
+    },
+    {
+      "name": "Check Client Status",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/api/status/client_123", "host": ["localhost"], "port": "8080", "path": ["api","status","client_123"] }
+      }
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/api/health", "host": ["localhost"], "port": "8080", "path": ["api","health"] }
+      }
+    },
+    {
+      "name": "Get Config",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/api/config", "host": ["localhost"], "port": "8080", "path": ["api","config"] }
+      }
+    }
+  ]
+}
