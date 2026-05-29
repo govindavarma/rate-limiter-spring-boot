@@ -22,7 +22,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api")
 public class RateLimiterController {
-
     private final RateLimiterService rateLimiterService;
 
     public RateLimiterController(RateLimiterService rateLimiterService) {
@@ -72,10 +71,6 @@ public class RateLimiterController {
             return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).headers(headers).body(response);
         }
     }
-
-    /**
-     * Check how many tokens a specific client has remaining.
-     */
     @GetMapping("/status/{clientId}")
     public ResponseEntity<Map<String, Object>> getStatus(@PathVariable String clientId) {
         int remaining = rateLimiterService.getRemainingTokens(clientId);
